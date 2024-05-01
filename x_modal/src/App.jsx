@@ -14,19 +14,23 @@ function App() {
     } else if (!email.includes('@')) {
       alert('Invalid email. Please check your email address.');
     } else if (!/^\d{10}$/.test(phone)) {
-      alert('Invalid phone number. Please enter a 10-digit phone number.');
-    } else if (new Date(dob) > new Date()) {
-      alert('Invalid date of birth. Date of birth cannot be in the future.');
+      alert('Invalid phone number. Please enter a valid phone number.');
     } else {
-      // Submit form logic
-      alert('Form submitted successfully!');
-      setUsername('');
-      setEmail('');
-      setPhone('');
-      setDob('');
-      setIsOpen(false); // Close the modal
+      const dobDate = new Date(dob);
+      const currentDate = new Date();
+      if (dobDate >= currentDate) {
+        alert('Invalid date of birth. Date of birth cannot be in the future.');
+      } else {
+        // Submit form logic
+        alert('Form submitted successfully!');
+        setUsername('');
+        setEmail('');
+        setPhone('');
+        setDob('');
+        setIsOpen(false); // Close the modal
+      }
     }
-  };
+  };  
 
   const handleCloseModal = (e) => {
     if (!e.target.closest('.modal')) {
