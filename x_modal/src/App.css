@@ -1,0 +1,56 @@
+
+.frontpage {
+  position: relative; /* Ensure relative positioning for absolute overlay */
+  background-color: #f2f2f2; /* Set background color for the homepage */
+  min-height: 100vh; /* Ensure full height */
+  display: flex;
+  flex-direction: column; /* Align children in a column */
+  justify-content: start; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  padding-top: 50px; /* Add top padding for space between top and content */
+}
+
+
+.centered-content {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  color: white;
+  background-color: blue; /* Set button background color to blue */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  background-color: #fff; /* Set background color for the modal */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.modal-content .submit-button {
+  margin-top: auto; /* Push submit button to the bottom */
+}
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the background */
+  z-index: 999; /* Ensure the overlay is on top of other elements */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
