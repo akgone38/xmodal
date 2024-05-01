@@ -27,10 +27,9 @@ function App() {
       setIsOpen(false); // Close the modal
     }
   };
-  
 
   const handleCloseModal = (e) => {
-    if (e.target.className === 'modal' || e.target.className === 'overlay') {
+    if (e.target.className === 'modal-overlay') {
       setIsOpen(false);
     }
   };
@@ -41,20 +40,27 @@ function App() {
       <button onClick={() => setIsOpen(true)}>Open Form</button>
 
       {isOpen && (
-        <div className="modal-overlay" onClick={handleCloseModal}>
-          <div className="modal">
+        <div className="modal-overlay">
+          <div className="modal" onClick={handleCloseModal}>
             <div className="modal-content">
               <h2>Fill Details:</h2>
-              <h3>Username</h3>
-              <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-              <h3>Email Address</h3>
-              <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-              <h3>Phone Number</h3>
-              <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-              <h3>Date of Birth</h3>
-              <input type="date" id="dob" value={dob} onChange={(e) => setDob(e.target.value)} />
+              <div className="form-input">
+                <label htmlFor="username">Username</label>
+                <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+              </div>
+              <div className="form-input">
+                <label htmlFor="email">Email Address</label>
+                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              </div>
+              <div className="form-input">
+                <label htmlFor="phone">Phone Number</label>
+                <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+              </div>
+              <div className="form-input">
+                <label htmlFor="dob">Date of Birth</label>
+                <input type="date" id="dob" value={dob} onChange={(e) => setDob(e.target.value)} />
+              </div>
               <button className="submit-button" onClick={handleSubmit}>Submit</button>
-              {/* Remove the close button */}
             </div>
           </div>
         </div>
