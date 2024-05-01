@@ -33,10 +33,11 @@ function App() {
   };  
 
   const handleCloseModal = (e) => {
-    if (!e.target.closest('.modal')) {
+    if (!e.target.closest('.modal-content')) {
       setIsOpen(false);
     }
   };
+  
   
   return (
     <div className='frontpage'>
