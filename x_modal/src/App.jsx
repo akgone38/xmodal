@@ -43,17 +43,19 @@ function App() {
       {isOpen && (
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal">
-            <h2>Fill Details:</h2>
-            <h3>Username</h3>
-            <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-            <h3>Email Address</h3>
-            <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <h3>Phone Number</h3>
-            <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-            <h3>Date of Birth</h3>
-            <input type="date" id="dob" value={dob} onChange={(e) => setDob(e.target.value)} />
-            <button className="submit-button" onClick={handleSubmit}>Submit</button>
-            <button onClick={() => setIsOpen(false)}>Close</button>
+            <div className="modal-content">
+              <h2>Fill Details:</h2>
+              <h3>Username</h3>
+              <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+              <h3>Email Address</h3>
+              <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <h3>Phone Number</h3>
+              <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <h3>Date of Birth</h3>
+              <input type="date" id="dob" value={dob} onChange={(e) => setDob(e.target.value)} />
+              <button className="submit-button" onClick={handleSubmit}>Submit</button>
+              {/* Remove the close button */}
+            </div>
           </div>
         </div>
       )}
